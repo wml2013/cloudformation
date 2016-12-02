@@ -1,0 +1,153 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "ec2:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/resource": "warwickshire-west-mercia"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "ec2:CreateImage"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "ec2:CreateTags",
+                "ec2:DeleteTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "elasticloadbalancing:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/resource": "warwickshire-west-mercia"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "elasticloadbalancing:Describe*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "elasticloadbalancing:CreateTags",
+                "elasticloadbalancing:DeleteTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "cloudwatch:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/resource": "warwickshire-west-mercia"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:Describe*",
+                "cloudwatch:GetMetricStatistics"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "cloudwatch:CreateTags",
+                "cloudwatch:DeleteTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "autoscaling:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/resource": "warwickshire-west-mercia"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "autoscaling:Describe*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "autoscaling:CreateTags",
+                "autoscaling:DeleteTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "cloudformation:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/resource": "warwickshire-west-mercia"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "cloudformation:Describe*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "cloudformation:CreateTags",
+                "cloudformation:DeleteTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/resource":  "warwickshire-west-mercia"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+                ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "s3:CreateTags",
+                "s3:DeleteTags"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
